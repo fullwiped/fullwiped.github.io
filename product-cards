@@ -1,0 +1,130 @@
+:root {
+    --eternity-badge-bg-color: #FA9D1B;
+    --eternity-color-dark: #202020;
+    --eternity-color-light: #292929;
+    --eternity-color-lighter: #565669;
+    --eternity-price-tag-color: #DCAE62;
+}
+
+.card {
+  border: none;
+  height: 292px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 4px 4px 15px rgba(#000, 0.15);
+  position : relative;
+  background-color: var(--eternity-color-dark);
+  transition: all .4s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        transform: translate3D(0,-1px,0) scale(1.03);
+    }
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background: var(--img-src);
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-image::before {
+    position: relative;
+    content: attr(data-title);
+    color: white;
+    top: calc(100% - 40px);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(1px);
+    width: 100%;
+}
+
+.card::after {
+    display: none;
+}
+
+.card[data-badge]::after {
+    display: inherit;
+  border-top-left-radius: 10px;
+  position: absolute;
+  content: attr(data-badge);
+  border-bottom-right-radius: 10px;
+  padding: 3px 0.5rem;
+  letter-spacing: 2px;
+  width: fit-content;
+  background-color: var(--eternity-badge-bg-color);
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+}
+
+.card-title {
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    background-color: var(--eternity-color-dark);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-title > span {
+    margin: 0 5px;
+    color: var(--eternity-price-tag-color);
+}
+
+.btn-product {
+    width: 100%;
+    border-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: var(--eternity-color-light);
+    border: none;
+}
+
+.btn-product:hover {
+    background-color: var(--eternity-color-lighter);
+}
+
+.btn-product:active {
+    background-color: var(--eternity-color-light) !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .card {
+        height: 292px !important;
+    }
+}
+
+.paragraph {
+    margin: 50px 0;
+}
+
+.paragraph-title {
+    color: white;
+    font-size: large;
+}
+
+.paragraph-content {
+    text-align: justify;
+    color: #bcbcbc;
+}
